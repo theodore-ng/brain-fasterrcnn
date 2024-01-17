@@ -1,0 +1,980 @@
+{
+  "info": {
+    "year": "2024",
+    "version": "1",
+    "description": "Exported from roboflow.com",
+    "contributor": "",
+    "url": "https://public.roboflow.com/object-detection/undefined",
+    "date_created": "2024-01-17T02:41:32+00:00"
+  },
+  "licenses": [
+    {
+      "id": 1,
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "name": "CC BY 4.0"
+    }
+  ],
+  "categories": [
+    { "id": 0, "name": "internal-capsule", "supercategory": "none" },
+    { "id": 1, "name": "abnormal", "supercategory": "internal-capsule" },
+    { "id": 2, "name": "internal-capsule", "supercategory": "internal-capsule" }
+  ],
+  "images": [
+    {
+      "id": 0,
+      "license": 1,
+      "file_name": "50_jpg.rf.20ad4a8e659dc81c2f08687ee7145899.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 1,
+      "license": 1,
+      "file_name": "40_jpg.rf.4fc6b272b4e4412f3e139edd68d0ecf8.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 2,
+      "license": 1,
+      "file_name": "42_jpg.rf.306299f5ea492ce58cb16d7869f89d7f.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 3,
+      "license": 1,
+      "file_name": "44_jpg.rf.0ad2adfa8dde0396251675e85ee8b453.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 4,
+      "license": 1,
+      "file_name": "50_jpg.rf.3514571f952c9b8e0c3caa38c23b66cf.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 5,
+      "license": 1,
+      "file_name": "59_jpg.rf.2b156c70862b837d71da516daf594542.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 6,
+      "license": 1,
+      "file_name": "51_jpg.rf.4747f8b509a16bd390584a7c446ec277.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 8,
+      "license": 1,
+      "file_name": "40_jpg.rf.5c29836a6cde4231a22b563d01098d52.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 9,
+      "license": 1,
+      "file_name": "42_jpg.rf.131f401f8cabca79546d7dc9450f7fba.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 10,
+      "license": 1,
+      "file_name": "65_jpg.rf.40f65a47c81df1b0973d00de4bc30f15.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 11,
+      "license": 1,
+      "file_name": "37_jpg.rf.47c55af99990bc04d4b6e70bf4b25db5.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 12,
+      "license": 1,
+      "file_name": "29_jpg.rf.2b9883170c90f71400e3322a00656e5e.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 13,
+      "license": 1,
+      "file_name": "39_jpg.rf.5744c114fb3a355c357450ec5f692089.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 14,
+      "license": 1,
+      "file_name": "29_jpg.rf.570814942234c2378f0f6502561d4ae9.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 15,
+      "license": 1,
+      "file_name": "64_jpg.rf.1d44df26f2f1e82c0f803dddb1981f72.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 16,
+      "license": 1,
+      "file_name": "26_jpg.rf.11fea4b0c9f1163b4b79a73af7824aef.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 17,
+      "license": 1,
+      "file_name": "45_jpg.rf.7319f02ddf302a3c34b2fb4fecfa41ed.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 18,
+      "license": 1,
+      "file_name": "54_jpg.rf.42c9c4d15dcf8f7cf0bf67b1735818ca.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 19,
+      "license": 1,
+      "file_name": "54_jpg.rf.3b51809fe818d8431ad737d0211a57c7.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 20,
+      "license": 1,
+      "file_name": "52_jpg.rf.6e74c10899daa87c5e28a95ca53b769a.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 21,
+      "license": 1,
+      "file_name": "63_jpg.rf.8a966854d0c94bebaaf3ec30d2f778a9.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 22,
+      "license": 1,
+      "file_name": "35_jpg.rf.80d763e3d125316b4576f8c8b78902b5.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 23,
+      "license": 1,
+      "file_name": "26_jpg.rf.78bab2c3285a40b6399ee935d0f01381.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 24,
+      "license": 1,
+      "file_name": "59_jpg.rf.8e35efd435e9478ff96250199895e7d3.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 25,
+      "license": 1,
+      "file_name": "48_jpg.rf.88373a995e4ae670a4938e9e2b1c7b5a.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 26,
+      "license": 1,
+      "file_name": "63_jpg.rf.a2b958e83715dd999d5511ac9f6cd4c8.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 27,
+      "license": 1,
+      "file_name": "34_jpg.rf.93b1bcf5bba0479dd916306b71039c6e.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 28,
+      "license": 1,
+      "file_name": "64_jpg.rf.9a70a27f606d323b5f345589d96884c2.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 29,
+      "license": 1,
+      "file_name": "27_jpg.rf.aa85795d4e7a3df7e48e0c8d4e21f90a.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 30,
+      "license": 1,
+      "file_name": "34_jpg.rf.b0da3eba34e387f864360527b947b575.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 31,
+      "license": 1,
+      "file_name": "48_jpg.rf.abd6c843f7410d8babaf42d6a22986db.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 32,
+      "license": 1,
+      "file_name": "62_jpg.rf.ba2f921f2cd891fa6d7b95e19f96b6ac.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 33,
+      "license": 1,
+      "file_name": "38_jpg.rf.b2a3a7ca8846b3f5e0af1c1bca17ea93.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 34,
+      "license": 1,
+      "file_name": "43_jpg.rf.bdddb741a01c3c652e7db396f7397b39.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 35,
+      "license": 1,
+      "file_name": "41_jpg.rf.ca396cef206ab7f02c0c6fccee226e0f.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 36,
+      "license": 1,
+      "file_name": "44_jpg.rf.c0130f76ed4ccea46e4072790b302d5f.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 37,
+      "license": 1,
+      "file_name": "43_jpg.rf.d717304c491d8df8e1498cf990d5a649.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 38,
+      "license": 1,
+      "file_name": "41_jpg.rf.b0e5ff6633a01f1b05e7f9da903c81a4.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 39,
+      "license": 1,
+      "file_name": "37_jpg.rf.d75635480cbcf1072cc1a635049396b4.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 40,
+      "license": 1,
+      "file_name": "32_jpg.rf.e4c6ee3519ec2cca53745c91798cc561.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 41,
+      "license": 1,
+      "file_name": "52_jpg.rf.de074192ad3ddfc81a4515da83e918e6.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 42,
+      "license": 1,
+      "file_name": "45_jpg.rf.f60beb2a2d8fd199b28c3bf3be1e465f.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 43,
+      "license": 1,
+      "file_name": "38_jpg.rf.da90560050e2589f1dc1c439b317ed36.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 44,
+      "license": 1,
+      "file_name": "32_jpg.rf.f1cbc5424a3035a2e496f072ef3bef4c.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 45,
+      "license": 1,
+      "file_name": "27_jpg.rf.c44e6d828703fe59c019e1d6105a7645.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 46,
+      "license": 1,
+      "file_name": "51_jpg.rf.ebc8e914cf57e03872ed3242a0eadf95.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 47,
+      "license": 1,
+      "file_name": "39_jpg.rf.f7fb207a7cd7d2bab484f87ef4bc20d1.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    },
+    {
+      "id": 48,
+      "license": 1,
+      "file_name": "62_jpg.rf.87ee3c81c9c6133949ba687e98147350.jpg",
+      "height": 640,
+      "width": 640,
+      "date_captured": "2024-01-17T02:41:32+00:00",
+      "extra": { "user_tags": ["Cancer"] }
+    }
+  ],
+  "annotations": [
+    {
+      "id": 0,
+      "image_id": 0,
+      "category_id": 2,
+      "bbox": [205, 255, 74, 147.5],
+      "area": 10915,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 1,
+      "image_id": 0,
+      "category_id": 2,
+      "bbox": [339, 259, 68, 130.5],
+      "area": 8874,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 2,
+      "image_id": 1,
+      "category_id": 1,
+      "bbox": [125, 54, 162, 178.5],
+      "area": 28917,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 3,
+      "image_id": 2,
+      "category_id": 1,
+      "bbox": [130, 55, 163, 170],
+      "area": 27710,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 4,
+      "image_id": 3,
+      "category_id": 1,
+      "bbox": [141, 64, 153, 147],
+      "area": 22491,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 5,
+      "image_id": 4,
+      "category_id": 2,
+      "bbox": [205, 238, 74, 147.5],
+      "area": 10915,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 6,
+      "image_id": 4,
+      "category_id": 2,
+      "bbox": [339, 250, 68, 130.5],
+      "area": 8874,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 7,
+      "image_id": 5,
+      "category_id": 1,
+      "bbox": [221, 365, 41.5, 44.5],
+      "area": 1846.75,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 8,
+      "image_id": 6,
+      "category_id": 2,
+      "bbox": [211, 242, 64.5, 139],
+      "area": 8965.5,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 9,
+      "image_id": 6,
+      "category_id": 2,
+      "bbox": [342, 248, 67.5, 134.5],
+      "area": 9078.75,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 10,
+      "image_id": 8,
+      "category_id": 1,
+      "bbox": [125, 407, 162, 178.5],
+      "area": 28917,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 11,
+      "image_id": 9,
+      "category_id": 1,
+      "bbox": [130, 416, 163, 170],
+      "area": 27710,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 12,
+      "image_id": 10,
+      "category_id": 1,
+      "bbox": [201, 205, 60, 53],
+      "area": 3180,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 13,
+      "image_id": 11,
+      "category_id": 1,
+      "bbox": [170, 57, 118.5, 142.5],
+      "area": 16886.25,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 14,
+      "image_id": 12,
+      "category_id": 1,
+      "bbox": [214, 493, 82, 85.5],
+      "area": 7011,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 15,
+      "image_id": 13,
+      "category_id": 1,
+      "bbox": [124, 414, 175.5, 173.5],
+      "area": 30449.25,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 16,
+      "image_id": 14,
+      "category_id": 1,
+      "bbox": [214, 61, 82, 85.5],
+      "area": 7011,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 17,
+      "image_id": 15,
+      "category_id": 1,
+      "bbox": [213, 381, 46.5, 51],
+      "area": 2371.5,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 18,
+      "image_id": 16,
+      "category_id": 1,
+      "bbox": [227, 492, 62.5, 67],
+      "area": 4187.5,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 19,
+      "image_id": 17,
+      "category_id": 1,
+      "bbox": [159, 66, 132, 142],
+      "area": 18744,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 20,
+      "image_id": 18,
+      "category_id": 2,
+      "bbox": [209, 272, 57.5, 106.5],
+      "area": 6123.75,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 21,
+      "image_id": 18,
+      "category_id": 2,
+      "bbox": [341, 273, 57.5, 112],
+      "area": 6440,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 22,
+      "image_id": 19,
+      "category_id": 2,
+      "bbox": [209, 261, 57.5, 106.5],
+      "area": 6123.75,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 23,
+      "image_id": 19,
+      "category_id": 2,
+      "bbox": [341, 256, 57.5, 112],
+      "area": 6440,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 24,
+      "image_id": 20,
+      "category_id": 2,
+      "bbox": [341, 257, 71, 139.5],
+      "area": 9904.5,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 25,
+      "image_id": 20,
+      "category_id": 2,
+      "bbox": [199, 248, 70.5, 138],
+      "area": 9729,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 26,
+      "image_id": 21,
+      "category_id": 1,
+      "bbox": [214, 379, 40.5, 45.5],
+      "area": 1842.75,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 27,
+      "image_id": 22,
+      "category_id": 1,
+      "bbox": [132, 414, 164, 169],
+      "area": 27716,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 28,
+      "image_id": 23,
+      "category_id": 1,
+      "bbox": [227, 81, 62.5, 67],
+      "area": 4187.5,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 29,
+      "image_id": 24,
+      "category_id": 1,
+      "bbox": [221, 231, 41.5, 44.5],
+      "area": 1846.75,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 30,
+      "image_id": 25,
+      "category_id": 2,
+      "bbox": [193, 238, 92.5, 133],
+      "area": 12302.5,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 31,
+      "image_id": 25,
+      "category_id": 2,
+      "bbox": [342, 250, 82, 132],
+      "area": 10824,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 32,
+      "image_id": 26,
+      "category_id": 1,
+      "bbox": [214, 215, 40.5, 45.5],
+      "area": 1842.75,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 33,
+      "image_id": 27,
+      "category_id": 1,
+      "bbox": [129, 414, 166.5, 164.5],
+      "area": 27389.25,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 34,
+      "image_id": 28,
+      "category_id": 1,
+      "bbox": [213, 209, 46.5, 51],
+      "area": 2371.5,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 35,
+      "image_id": 29,
+      "category_id": 1,
+      "bbox": [205, 77, 82.5, 84],
+      "area": 6930,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 36,
+      "image_id": 30,
+      "category_id": 1,
+      "bbox": [129, 61, 166.5, 164.5],
+      "area": 27389.25,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 37,
+      "image_id": 31,
+      "category_id": 2,
+      "bbox": [193, 269, 92.5, 133],
+      "area": 12302.5,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 38,
+      "image_id": 31,
+      "category_id": 2,
+      "bbox": [342, 258, 82, 132],
+      "area": 10824,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 39,
+      "image_id": 32,
+      "category_id": 1,
+      "bbox": [217, 373, 38, 52.5],
+      "area": 1995,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 40,
+      "image_id": 33,
+      "category_id": 1,
+      "bbox": [139, 57, 131.5, 158],
+      "area": 20777,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 41,
+      "image_id": 34,
+      "category_id": 1,
+      "bbox": [131, 389, 166, 196.5],
+      "area": 32619,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 42,
+      "image_id": 35,
+      "category_id": 1,
+      "bbox": [124, 54, 154.5, 178],
+      "area": 27501,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 43,
+      "image_id": 36,
+      "category_id": 1,
+      "bbox": [141, 430, 153, 147],
+      "area": 22491,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 44,
+      "image_id": 37,
+      "category_id": 1,
+      "bbox": [131, 54, 166, 196.5],
+      "area": 32619,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 45,
+      "image_id": 38,
+      "category_id": 1,
+      "bbox": [124, 409, 154.5, 178],
+      "area": 27501,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 46,
+      "image_id": 39,
+      "category_id": 1,
+      "bbox": [170, 441, 118.5, 142.5],
+      "area": 16886.25,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 47,
+      "image_id": 40,
+      "category_id": 1,
+      "bbox": [148, 64, 136, 150],
+      "area": 20400,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 48,
+      "image_id": 41,
+      "category_id": 2,
+      "bbox": [341, 243, 71, 139.5],
+      "area": 9904.5,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 49,
+      "image_id": 41,
+      "category_id": 2,
+      "bbox": [199, 255, 70.5, 138],
+      "area": 9729,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 50,
+      "image_id": 42,
+      "category_id": 1,
+      "bbox": [159, 433, 132, 142],
+      "area": 18744,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 51,
+      "image_id": 43,
+      "category_id": 1,
+      "bbox": [139, 426, 131.5, 158],
+      "area": 20777,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 52,
+      "image_id": 44,
+      "category_id": 1,
+      "bbox": [148, 427, 136, 150],
+      "area": 20400,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 53,
+      "image_id": 45,
+      "category_id": 1,
+      "bbox": [205, 480, 82.5, 84],
+      "area": 6930,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 54,
+      "image_id": 46,
+      "category_id": 2,
+      "bbox": [211, 259, 64.5, 139],
+      "area": 8965.5,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 55,
+      "image_id": 46,
+      "category_id": 2,
+      "bbox": [342, 258, 67.5, 134.5],
+      "area": 9078.75,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 56,
+      "image_id": 47,
+      "category_id": 1,
+      "bbox": [124, 52, 175.5, 173.5],
+      "area": 30449.25,
+      "segmentation": [],
+      "iscrowd": 0
+    },
+    {
+      "id": 57,
+      "image_id": 48,
+      "category_id": 1,
+      "bbox": [217, 214, 38, 52.5],
+      "area": 1995,
+      "segmentation": [],
+      "iscrowd": 0
+    }
+  ]
+}
