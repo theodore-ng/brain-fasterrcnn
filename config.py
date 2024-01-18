@@ -3,7 +3,7 @@ train_data_dir = "my-data/train"
 train_coco = "my-data/train/_annotations.coco.json"
 
 # Batch size
-train_batch_size = 1
+train_batch_size = 4
 
 # Params for dataloader
 train_shuffle_dl = True
@@ -13,7 +13,7 @@ num_workers_dl = 4
 
 # Two classes; Only target class or background
 num_classes = 2
-num_epochs = 10
+num_epochs = 2
 
 lr = 0.005
 momentum = 0.9
