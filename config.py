@@ -1,6 +1,9 @@
 # path to your own data and coco file
 train_data_dir = "my-data/train"
 train_coco = "my-data/train/_annotations.coco.json"
+model_path = "models/version-1.pth"
+EVAL_DATA_DIR = "my-data/valid"
+EVAL_COCO = "my-data/valid/_annotations.coco.json"
 
 # Batch size
 train_batch_size = 4
@@ -13,7 +16,7 @@ num_workers_dl = 4
 
 # Two classes; Only target class or background
 num_classes = 2
-num_epochs = 2
+num_epochs = 100
 
 lr = 0.005
 momentum = 0.9

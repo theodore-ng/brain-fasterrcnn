@@ -31,7 +31,7 @@ device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cp
 for imgs, annotations in data_loader:
     imgs = list(img.to(device) for img in imgs)
     annotations = [{k: v.to(device) for k, v in t.items()} for t in annotations]
-    print(annotations)
+    # print(annotations)
 
 
 model = get_model_instance_segmentation(config.num_classes)
@@ -64,3 +64,7 @@ for epoch in range(config.num_epochs):
         optimizer.step()
 
         print(f"Iteration: {i}/{len_dataloader}, Loss: {losses}")
+
+torch.save(model.state_dict(), config.model_path)
+        
+print("Train completed!")
