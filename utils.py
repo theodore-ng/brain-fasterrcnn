@@ -1,9 +1,8 @@
 import os
-import shutil
 import torchvision
 import torch
 
-# In my case, just added ToTensor
+# Transformation just added ToTensor
 def get_transform():
     custom_transforms = []
     custom_transforms.append(torchvision.transforms.ToTensor())
@@ -21,3 +20,20 @@ def save_model(model, path):
         os.mkdir(dir) 
     torch.save(model.state_dict(), path)
     print(f"Model save to {path}")
+    
+# Remove the results with low confident rate 
+def remove_under_confident(prediction: dict, score: float):
+    """prediction is a dictionary with keys:
+    boxes: tensor(n, 4)
+    labels: tensor(n, 1)
+    scores: tensor(n, 1)
+    we need to remove all the results with scores under confident score
+
+    Args:
+        predictions (dict): _description_
+    """
+    results = prediction["scores"]
+    criteria_meet = [results > score]
+    for key, item in prediction.items():
+        prediction[key] = item[criteria_meet]
+    return prediction
