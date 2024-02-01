@@ -1,4 +1,6 @@
 import os
+import random
+from PIL import Image
 import matplotlib.pyplot as plt
 import torch
 import torchvision
@@ -43,6 +45,15 @@ def remove_under_confident(prediction: dict, score: float):
 
 # Draw bboxes and save to a directory
 def test_visualization(image, pred_boxes, pred_labels, img_path, colors="blue"):
+    """Visualize result of the model after the image pass through model
+
+    Args:
+        image (tensor): image converted to tensor type
+        pred_boxes (_type_): _description_
+        pred_labels (_type_): labels draw near box
+        img_path (string): where to save the result image
+        colors (str, optional): _description_. Defaults to "blue".
+    """
     output_image = draw_bounding_boxes(image, pred_boxes, pred_labels, colors=colors)
     dir, file = os.path.split(img_path)
     if not os.path.exists(dir):
@@ -55,3 +66,21 @@ def test_visualization(image, pred_boxes, pred_labels, img_path, colors="blue"):
     plt.imshow(output_image.permute(1, 2, 0))
     plt.savefig(img_path)
     print(f"Results save completed at {img_path}.")
+    
+def pick_image_example(dir):
+    """Pick random image from a directory
+
+    Args:
+        dir (string): the directory want to pick
+
+    Returns:
+        PIL.Image: an PIL Image object
+    """
+    
+    for root, dirs, files in os.walk(dir):
+        img_file = random.choice(files)
+        img_path = os.path.join(dir, img_file)
+        image = Image.open(img_path)
+        break
+    return image
+    

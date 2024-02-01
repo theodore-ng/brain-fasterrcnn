@@ -3,6 +3,7 @@ from config import (
     EVAL_DATA_DIR,
     EVAL_COCO,
     MODEL_PATH,
+    TEST_DATA_DIR,
     TEST_IMG_PATH, 
     TRAIN_BATCH_SIZE,
     TRAIN_SHUFFLE_DL,
@@ -11,12 +12,10 @@ from config import (
     CONFIDENT_SCORE,
 )
 from model import get_model_instance_segmentation
-from utils import collate_fn, get_transform, remove_under_confident, test_visualization
+from utils import collate_fn, get_transform, remove_under_confident, test_visualization, pick_image_example
 
 import torch
-from torchvision.utils import draw_bounding_boxes
 import torchvision.transforms.functional as F
-import matplotlib.pyplot as plt
 from PIL import Image
 
 print("Torch version:", torch.__version__)
@@ -46,8 +45,7 @@ model.load_state_dict(torch.load(MODEL_PATH))
 model.eval()
 
 # take 1 example from test dataset 
-# TODO: make function here
-image = Image.open("data/test/31_jpg.rf.7ddd7d1b0964a258c819cfc9e721a854.jpg")
+image = pick_image_example(TEST_DATA_DIR)
 image = F.pil_to_tensor(image)  # convert to tensor shape (3,640,640)
 image_tensor = F.convert_image_dtype(image)    # covert to type for the model
 
