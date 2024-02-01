@@ -4,8 +4,9 @@ TRAIN_COCO = "data/train/_annotations.coco.json"
 EVAL_DATA_DIR = "data/valid"
 EVAL_COCO = "data/valid/_annotations.coco.json"
 
-# path to save model
+# path to save model, image
 MODEL_PATH = "models/version-1.pth"
+TEST_IMG_PATH = "images/result1.png"
 
 # Batch size
 TRAIN_BATCH_SIZE = 4
