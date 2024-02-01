@@ -1,3 +1,4 @@
 *.pth
 *.pt
 models/*
+__pycache__
