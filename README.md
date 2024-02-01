@@ -1,3 +1,7 @@
-# frcnn_roboflow_dataset
-Do a train with roboflow datasets with annotation by myselfs, the format of datasets is COCO
-Model using Faster CNN
+# frcnn
+Train my model by FasterRCNN networks
+Model using: Brain by Roboflow in COCO format
+
+
+Pytorch version: 1.2.0
+Pycocotools: 2.0.0

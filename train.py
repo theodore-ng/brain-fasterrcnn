@@ -1,40 +1,49 @@
-import torch
-import config
-from utils import (
-    get_model_instance_segmentation,
-    collate_fn,
-    get_transform,
-    myOwnDataset,
+from dataset_coco import BrainDataset
+from config import (
+    TRAIN_DATA_DIR,
+    TRAIN_COCO,
+    MODEL_PATH,
+    TRAIN_BATCH_SIZE,
+    TRAIN_SHUFFLE_DL,
+    NUM_WORKERS_DL,
+    NUM_CLASSES,
+    NUM_EPOCHS,
+    LR,
+    MOMENTUM,
+    WEIGHT_DECAY
 )
+from model import get_model_instance_segmentation
+from utils import collate_fn, get_transform, save_model
+
+import torch
 
 print("Torch version:", torch.__version__)
 
+# select device (whether GPU or CPU)
+device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+
 # create own Dataset
-my_dataset = myOwnDataset(
-    root=config.train_data_dir, annotation=config.train_coco, transforms=get_transform()
+my_dataset = BrainDataset(
+    root=TRAIN_DATA_DIR, annotation=TRAIN_COCO, transforms=get_transform()
 )
 
 # own DataLoader
 data_loader = torch.utils.data.DataLoader(
     my_dataset,
-    batch_size=config.train_batch_size,
-    shuffle=config.train_shuffle_dl,
-    num_workers=config.num_workers_dl,
+    batch_size=TRAIN_BATCH_SIZE,
+    shuffle=TRAIN_SHUFFLE_DL,
+    num_workers=NUM_WORKERS_DL,
     collate_fn=collate_fn,
 )
-
-
-# select device (whether GPU or CPU)
-device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
 # DataLoader is iterable over Dataset
 for imgs, annotations in data_loader:
     imgs = list(img.to(device) for img in imgs)
     annotations = [{k: v.to(device) for k, v in t.items()} for t in annotations]
-    # print(annotations)
+print("Dataloader complete!")
 
 
-model = get_model_instance_segmentation(config.num_classes)
+model = get_model_instance_segmentation(NUM_CLASSES)
 
 # move model to the right device
 model.to(device)
@@ -42,14 +51,14 @@ model.to(device)
 # parameters
 params = [p for p in model.parameters() if p.requires_grad]
 optimizer = torch.optim.SGD(
-    params, lr=config.lr, momentum=config.momentum, weight_decay=config.weight_decay
+    params, lr=LR, momentum=MOMENTUM, weight_decay=WEIGHT_DECAY
 )
 
 len_dataloader = len(data_loader)
 
 # Training
-for epoch in range(config.num_epochs):
-    print(f"Epoch: {epoch}/{config.num_epochs}")
+for epoch in range(NUM_EPOCHS):
+    print(f"Epoch: {epoch}/{NUM_EPOCHS}")
     model.train()
     i = 0
     for imgs, annotations in data_loader:
@@ -64,7 +73,8 @@ for epoch in range(config.num_epochs):
         optimizer.step()
 
         print(f"Iteration: {i}/{len_dataloader}, Loss: {losses}")
-
-torch.save(model.state_dict(), config.model_path)
         
-print("Train completed!")
+# Save model to directory
+save_model(model, MODEL_PATH)
+        
+print(f"Train completed!")

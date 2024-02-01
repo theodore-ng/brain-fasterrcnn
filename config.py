@@ -1,23 +1,21 @@
 # path to your own data and coco file
-train_data_dir = "my-data/train"
-train_coco = "my-data/train/_annotations.coco.json"
-model_path = "models/version-1.pth"
-EVAL_DATA_DIR = "my-data/valid"
-EVAL_COCO = "my-data/valid/_annotations.coco.json"
+TRAIN_DATA_DIR = "data/train"
+TRAIN_COCO = "data/train/_annotations.coco.json"
+MODEL_PATH = "models/version-1.pth"
 
 # Batch size
-train_batch_size = 4
+TRAIN_BATCH_SIZE = 4
 
 # Params for dataloader
-train_shuffle_dl = True
-num_workers_dl = 4
+TRAIN_SHUFFLE_DL = True
+NUM_WORKERS_DL = 4
 
 # Params for training
 
 # Two classes; Only target class or background
-num_classes = 2
-num_epochs = 100
+NUM_CLASSES = 2
+NUM_EPOCHS = 1
 
-lr = 0.005
-momentum = 0.9
-weight_decay = 0.005
+LR = 0.005
+MOMENTUM = 0.9
+WEIGHT_DECAY = 0.005
