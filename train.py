@@ -3,8 +3,8 @@ from config import (
     TRAIN_DATA_DIR,
     TRAIN_COCO,
     MODEL_PATH,
-    TRAIN_BATCH_SIZE,
-    TRAIN_SHUFFLE_DL,
+    BATCH_SIZE,
+    SHUFFLE_DL,
     NUM_WORKERS_DL,
     NUM_CLASSES,
     NUM_EPOCHS,
@@ -30,8 +30,8 @@ my_dataset = BrainDataset(
 # own DataLoader
 data_loader = torch.utils.data.DataLoader(
     my_dataset,
-    batch_size=TRAIN_BATCH_SIZE,
-    shuffle=TRAIN_SHUFFLE_DL,
+    batch_size=BATCH_SIZE,
+    shuffle=SHUFFLE_DL,
     num_workers=NUM_WORKERS_DL,
     collate_fn=collate_fn,
 )

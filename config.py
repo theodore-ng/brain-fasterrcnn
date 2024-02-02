@@ -10,10 +10,10 @@ TEST_IMG_DIR = "images"
 TEST_DATA_DIR = "data/test"
 
 # Batch size
-TRAIN_BATCH_SIZE = 4
+BATCH_SIZE = 4
 
 # Params for dataloader
-TRAIN_SHUFFLE_DL = True
+SHUFFLE_DL = True
 NUM_WORKERS_DL = 4
 
 # Params for training
