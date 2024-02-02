@@ -20,7 +20,8 @@ import torch
 print("Torch version:", torch.__version__)
 
 # select device (whether GPU or CPU)
-device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+device = torch.device(
+    "cuda") if torch.cuda.is_available() else torch.device("cpu")
 
 # create own Dataset
 my_dataset = BrainDataset(
@@ -39,7 +40,8 @@ data_loader = torch.utils.data.DataLoader(
 # DataLoader is iterable over Dataset
 for imgs, annotations in data_loader:
     imgs = list(img.to(device) for img in imgs)
-    annotations = [{k: v.to(device) for k, v in t.items()} for t in annotations]
+    annotations = [{k: v.to(device) for k, v in t.items()}
+                   for t in annotations]
 print("Dataloader complete!")
 
 
@@ -64,7 +66,8 @@ for epoch in range(NUM_EPOCHS):
     for imgs, annotations in data_loader:
         i += 1
         imgs = list(img.to(device) for img in imgs)
-        annotations = [{k: v.to(device) for k, v in t.items()} for t in annotations]
+        annotations = [{k: v.to(device) for k, v in t.items()}
+                       for t in annotations]
         loss_dict = model(imgs, annotations)
         losses = sum(loss for loss in loss_dict.values())
 
@@ -73,8 +76,8 @@ for epoch in range(NUM_EPOCHS):
         optimizer.step()
 
         print(f"Iteration: {i}/{len_dataloader}, Loss: {losses}")
-        
+
 # Save model to directory
 save_model(model, MODEL_PATH)
-        
+
 print(f"Train completed!")
