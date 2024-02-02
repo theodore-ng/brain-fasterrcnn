@@ -1,10 +1,12 @@
+import os
+
 from dataset_coco import BrainDataset
 from config import (
     EVAL_DATA_DIR,
     EVAL_COCO,
     MODEL_PATH,
     TEST_DATA_DIR,
-    TEST_IMG_PATH, 
+    TEST_IMG_DIR, 
     TRAIN_BATCH_SIZE,
     TRAIN_SHUFFLE_DL,
     NUM_WORKERS_DL,
@@ -12,7 +14,15 @@ from config import (
     CONFIDENT_SCORE,
 )
 from model import get_model_instance_segmentation
-from utils import collate_fn, get_transform, remove_under_confident, test_visualization, pick_image_example
+from utils import (
+    collate_fn,
+    get_transform, 
+    remove_under_confident, 
+    test_visualization, 
+    pick_image_example, 
+    predict_image
+)
+
 
 import torch
 import torchvision.transforms.functional as F
@@ -44,21 +54,18 @@ model = get_model_instance_segmentation(NUM_CLASSES)
 model.load_state_dict(torch.load(MODEL_PATH))
 model.eval()
 
-# take 1 example from test dataset 
-image = pick_image_example(TEST_DATA_DIR)
-image = F.pil_to_tensor(image)  # convert to tensor shape (3,640,640)
-image_tensor = F.convert_image_dtype(image)    # covert to type for the model
+# pick 1 random example from test dataset 
+image, image_tensor, img_file = pick_image_example(TEST_DATA_DIR)
 
 # Do the predict
-with torch.no_grad():
-    image_tensor.to("cpu")
-    model.to("cpu")
-    prediction = model([image_tensor, ])[0]
-    prediction = remove_under_confident(prediction, CONFIDENT_SCORE)
-    scores = prediction["scores"]
-    pred_labels = [f"confident: {score:.3f}" for score in scores]
-    pred_boxes = prediction["boxes"].long()
-    
+# with torch.no_grad():
+#     prediction = model([image_tensor, ])[0]
+#     prediction = remove_under_confident(prediction, CONFIDENT_SCORE)
+#     scores = prediction["scores"]
+#     pred_labels = [f"confident: {score:.3f}" for score in scores]
+#     pred_boxes = prediction["boxes"].long()
+pred_boxes, pred_labels = predict_image(model, image_tensor, CONFIDENT_SCORE) 
 
 # Save the output image
-test_visualization(image, pred_boxes, pred_labels, img_path=TEST_IMG_PATH)
+result_path = os.path.join(TEST_IMG_DIR, img_file)
+test_visualization(image, pred_boxes, pred_labels, img_path=result_path)

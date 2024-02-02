@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import torch
 import torchvision
 from torchvision.utils import draw_bounding_boxes
+import torchvision.transforms.functional as F
 
 
 # Transformation just added ToTensor
@@ -74,13 +75,31 @@ def pick_image_example(dir):
         dir (string): the directory want to pick
 
     Returns:
-        PIL.Image: an PIL Image object
+        PIL.Image, tensor_image, image_name: an PIL Image object
     """
     
     for root, dirs, files in os.walk(dir):
-        img_file = random.choice(files)
-        img_path = os.path.join(dir, img_file)
-        image = Image.open(img_path)
+        while True:
+            img_file = random.choice(files)
+            img_path = os.path.join(dir, img_file)
+            try:
+                image = Image.open(img_path)
+                break
+            except:
+                continue
         break
-    return image
+    image = F.pil_to_tensor(image)  # convert to tensor shape (3,640,640)
+    image_tensor = F.convert_image_dtype(image)    # covert to type for the model
     
+    return image, image_tensor, img_file
+
+def predict_image(model, image_tensor, CONFIDENT_SCORE):
+    with torch.no_grad():
+    # image_tensor.to(device)
+    # model.to(device)
+        prediction = model([image_tensor, ])[0]
+        prediction = remove_under_confident(prediction, CONFIDENT_SCORE)
+        scores = prediction["scores"]
+        pred_labels = [f"confident: {score:.3f}" for score in scores]
+        pred_boxes = prediction["boxes"].long()
+    return pred_boxes, pred_labels

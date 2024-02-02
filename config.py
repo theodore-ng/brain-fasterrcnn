@@ -6,7 +6,7 @@ EVAL_COCO = "data/valid/_annotations.coco.json"
 
 # path to save model, image
 MODEL_PATH = "models/version-1.pth"
-TEST_IMG_PATH = "images/result1.png"
+TEST_IMG_DIR = "images"
 TEST_DATA_DIR = "data/test"
 
 # Batch size
