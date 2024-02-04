@@ -2,3 +2,4 @@
 *.pt
 models/*
 __pycache__
+references/
