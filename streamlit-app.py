@@ -2,6 +2,8 @@ import streamlit as st
 import requests
 import base64
 import io
+
+from test import predict_image
 from PIL import Image
 import glob
 from base64 import decodebytes
@@ -31,9 +33,9 @@ overlap_threshold = st.sidebar.slider('Overlap threshold: What is the maximum am
 # st.sidebar.image(image,
 #                  use_column_width=True)
 
-# image = Image.open('./images/streamlit_logo.png')
-# st.sidebar.image(image,
-#                  use_column_width=True)
+image = Image.open("./images/pytorch.jpg")
+st.sidebar.image(image,
+                 use_column_width=True)
 
 ##########
 ##### Set up main app.

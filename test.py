@@ -20,7 +20,6 @@ from utils import (
     remove_under_confident,
     test_visualization,
     pick_image_example,
-    predict_image,
 )
 
 
@@ -31,6 +30,17 @@ from PIL import Image
 
 print("Torch version:", torch.__version__)
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+
+def predict_image(model, image_tensor, CONFIDENT_SCORE):
+    with torch.no_grad():
+    # image_tensor.to(device)
+    # model.to(device)
+        prediction = model([image_tensor, ])[0]
+        prediction = remove_under_confident(prediction, CONFIDENT_SCORE)
+        scores = prediction["scores"]
+        pred_labels = [f"confident: {score:.3f}" for score in scores]
+        pred_boxes = prediction["boxes"].long()
+    return pred_boxes, pred_labels
 
 eval_transform = get_transform()
 
