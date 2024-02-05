@@ -28,47 +28,67 @@ from torch.utils.data import DataLoader
 import torchvision.transforms.functional as F
 from PIL import Image
 
-print("Torch version:", torch.__version__)
-device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
 def predict_image(model, image_tensor, CONFIDENT_SCORE):
+    """_summary_
+
+    Args:
+        model (_type_): _description_
+        image_tensor (_type_): _description_
+        CONFIDENT_SCORE (int): the confident score
+
+    Returns:
+        pred_boxes (tensor): tensor all the results of image
+        pred_labels (list): list of string al the results
+    """
     with torch.no_grad():
-    # image_tensor.to(device)
-    # model.to(device)
-        prediction = model([image_tensor, ])[0]
+        # image_tensor.to(device)
+        # model.to(device)
+        prediction = model(
+            [
+                image_tensor,
+            ]
+        )[0]
         prediction = remove_under_confident(prediction, CONFIDENT_SCORE)
         scores = prediction["scores"]
         pred_labels = [f"confident: {score:.3f}" for score in scores]
         pred_boxes = prediction["boxes"].long()
+        print(pred_boxes)
     return pred_boxes, pred_labels
 
-eval_transform = get_transform()
 
-# import data from eval dataset
-val_dataset = BrainDataset(
-    root=EVAL_DATA_DIR, annotation=EVAL_COCO, transforms=get_transform()
-)
+if __name__ == "__main__":
 
-# to data loader
-val_loader = DataLoader(
-    val_dataset,
-    batch_size=BATCH_SIZE,
-    shuffle=SHUFFLE_DL,
-    num_workers=NUM_WORKERS_DL,
-    collate_fn=collate_fn,
-)
+    print("Torch version:", torch.__version__)
+    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
-# retrieve model
-model = get_model_instance_segmentation(NUM_CLASSES)
-model.load_state_dict(torch.load(MODEL_PATH))
-model.eval()
+    eval_transform = get_transform()
 
-# pick 1 random example from test dataset
-image, image_tensor, img_name = pick_image_example(TEST_DATA_DIR)
+    # import data from eval dataset
+    val_dataset = BrainDataset(
+        root=EVAL_DATA_DIR, annotation=EVAL_COCO, transforms=get_transform()
+    )
 
-# Do the predict
-pred_boxes, pred_labels = predict_image(model, image_tensor, CONFIDENT_SCORE)
+    # to data loader
+    val_loader = DataLoader(
+        val_dataset,
+        batch_size=BATCH_SIZE,
+        shuffle=SHUFFLE_DL,
+        num_workers=NUM_WORKERS_DL,
+        collate_fn=collate_fn,
+    )
 
-# Save the output image
-result_path = os.path.join(TEST_IMG_DIR, img_name)
-test_visualization(image, pred_boxes, pred_labels, img_path=result_path)
+    # retrieve model
+    model = get_model_instance_segmentation(NUM_CLASSES)
+    model.load_state_dict(torch.load(MODEL_PATH))
+    model.eval()
+
+    # pick 1 random example from test dataset
+    image, image_tensor, img_name = pick_image_example(TEST_DATA_DIR)
+
+    # Do the predict
+    pred_boxes, pred_labels = predict_image(model, image_tensor, CONFIDENT_SCORE)
+
+    # Save the output image
+    result_path = os.path.join(TEST_IMG_DIR, img_name)
+    test_visualization(image, pred_boxes, pred_labels, img_path=result_path)

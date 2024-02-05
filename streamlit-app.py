@@ -11,17 +11,13 @@ from io import BytesIO
 import numpy as np
 import matplotlib.pyplot as plt
 
-##########
 ##### Set up sidebar.
-##########
 
 # Add in location to select image.
-
 st.sidebar.write("### Select an image to upload.")
 uploaded_file = st.sidebar.file_uploader(
     "", type=["png", "jpg", "jpeg"], accept_multiple_files=False
 )
-
 
 ## Add in sliders.
 confidence_threshold = st.sidebar.slider("Confidence threshold:", 0.0, 1.0, 0.5, 0.01)
@@ -30,26 +26,44 @@ overlap_threshold = st.sidebar.slider("Overlap threshold:", 0.0, 1.0, 0.5, 0.01)
 image = Image.open("./images/pytorch.jpg")
 st.sidebar.image(image, use_column_width=True)
 
-##########
 ##### Set up main app.
-##########
 
 ## Title.
 st.write("# Brain CT Object Detection")
 
+input_col, result_col = st.columns(2)
+
 # Pull in default image or user-selected image.
-# TODO: replace image
-if uploaded_file is None:
-    # Default image.
-    url = "https://theodore-ng.github.io/brain-fasterrcnn/images/samples/53_jpg.rf.4e78c70fdc383e73bd62be020217e755.jpg"
-    image = Image.open(requests.get(url, stream=True).raw)
+with input_col:
+    # Subtitle
+    st.header("Input image")
+    if uploaded_file is None:
+        # Default image.
+        url = "https://theodore-ng.github.io/brain-fasterrcnn/images/samples/53-origin.jpg"
+        image = Image.open(requests.get(url, stream=True).raw)
 
-else:
-    # User-selected image.
-    image = Image.open(uploaded_file)
+    else:
+        # User-selected image.
+        image = Image.open(uploaded_file)
 
-## Subtitle.
-st.write("### Inferenced Image")
+    # Display image.
+    st.image(image, use_column_width=True)
+
+with result_col:
+    # Subtitle
+    st.header("Result image")
+    if uploaded_file is None:
+        # Default image.
+        url = "https://theodore-ng.github.io/brain-fasterrcnn/images/samples/53-result.jpg"
+        image = Image.open(requests.get(url, stream=True).raw)
+
+    else:
+        # User-selected image.
+        image = Image.open(uploaded_file)
+
+    # Display image.
+    st.image(image, use_column_width=True)
+
 
 # # Convert to JPEG Buffer.
 # buffered = io.BytesIO()
@@ -82,9 +96,6 @@ st.write("### Inferenced Image")
 # # Convert to JPEG Buffer.
 # buffered = io.BytesIO()
 # image.save(buffered, quality=90, format='JPEG')
-
-# Display image.
-st.image(image, use_column_width=True)
 
 # ## Construct the URL to retrieve JSON.
 # upload_url = ''.join([
