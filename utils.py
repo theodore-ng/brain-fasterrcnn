@@ -50,11 +50,12 @@ def test_visualization(image, pred_boxes, pred_labels, img_path, colors="blue"):
 
     Args:
         image (tensor): image converted to tensor type
-        pred_boxes (_type_): _description_
-        pred_labels (_type_): labels draw near box
+        pred_boxes (list): list of predict box from predict_image
+        pred_labels (list): list of string labels draw near box
         img_path (string): where to save the result image
         colors (str, optional): _description_. Defaults to "blue".
     """
+    pred_boxes = torch.tensor(pred_boxes)
     output_image = draw_bounding_boxes(image, pred_boxes, pred_labels, colors=colors)
     dir, file = os.path.split(img_path)
     if not os.path.exists(dir):

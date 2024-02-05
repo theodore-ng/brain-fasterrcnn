@@ -22,11 +22,9 @@ from utils import (
     pick_image_example,
 )
 
-
 import torch
 from torch.utils.data import DataLoader
 import torchvision.transforms.functional as F
-from PIL import Image
 
 
 def predict_image(model, image_tensor, CONFIDENT_SCORE):
@@ -52,8 +50,7 @@ def predict_image(model, image_tensor, CONFIDENT_SCORE):
         prediction = remove_under_confident(prediction, CONFIDENT_SCORE)
         scores = prediction["scores"]
         pred_labels = [f"confident: {score:.3f}" for score in scores]
-        pred_boxes = prediction["boxes"].long()
-        print(pred_boxes)
+        pred_boxes = prediction["boxes"].long().tolist()
     return pred_boxes, pred_labels
 
 

@@ -36,6 +36,6 @@ async def predict_upload_file(file: UploadFile):
     # prediction
     pred_boxes, pred_labels = predict_image(model, image_tensor, CONFIDENT_SCORE)
     return {
-        "boxes": pred_boxes.tolist(),
+        "boxes": pred_boxes,
         "labels": pred_labels
     }
