@@ -17,46 +17,39 @@ import matplotlib.pyplot as plt
 
 # Add in location to select image.
 
-st.sidebar.write('#### Select an image to upload.')
-uploaded_file = st.sidebar.file_uploader('',
-                                         type=['png', 'jpg', 'jpeg'],
-                                         accept_multiple_files=False)
+st.sidebar.write("### Select an image to upload.")
+uploaded_file = st.sidebar.file_uploader(
+    "", type=["png", "jpg", "jpeg"], accept_multiple_files=False
+)
 
-st.sidebar.write('[Find additional images on Roboflow.](https://public.roboflow.com/object-detection/bccd/)')
 
 ## Add in sliders.
-confidence_threshold = st.sidebar.slider('Confidence threshold: What is the minimum acceptable confidence level for displaying a bounding box?', 0.0, 1.0, 0.5, 0.01)
-overlap_threshold = st.sidebar.slider('Overlap threshold: What is the maximum amount of overlap permitted between visible bounding boxes?', 0.0, 1.0, 0.5, 0.01)
-
-# TODO: replace image
-# image = Image.open('./images/roboflow_logo.png')
-# st.sidebar.image(image,
-#                  use_column_width=True)
+confidence_threshold = st.sidebar.slider("Confidence threshold:", 0.0, 1.0, 0.5, 0.01)
+overlap_threshold = st.sidebar.slider("Overlap threshold:", 0.0, 1.0, 0.5, 0.01)
 
 image = Image.open("./images/pytorch.jpg")
-st.sidebar.image(image,
-                 use_column_width=True)
+st.sidebar.image(image, use_column_width=True)
 
 ##########
 ##### Set up main app.
 ##########
 
 ## Title.
-st.write('# Brain CT Object Detection')
+st.write("# Brain CT Object Detection")
 
-## Pull in default image or user-selected image.
+# Pull in default image or user-selected image.
 # TODO: replace image
-# if uploaded_file is None:
-#     # Default image.
-#     url = 'https://github.com/matthewbrems/streamlit-bccd/blob/master/BCCD_sample_images/BloodImage_00038_jpg.rf.6551ec67098bc650dd650def4e8a8e98.jpg?raw=true'
-#     image = Image.open(requests.get(url, stream=True).raw)
+if uploaded_file is None:
+    # Default image.
+    url = "https://theodore-ng.github.io/brain-fasterrcnn/images/samples/53_jpg.rf.4e78c70fdc383e73bd62be020217e755.jpg"
+    image = Image.open(requests.get(url, stream=True).raw)
 
-# else:
-#     # User-selected image.
-image = Image.open(uploaded_file)
+else:
+    # User-selected image.
+    image = Image.open(uploaded_file)
 
 ## Subtitle.
-st.write('### Inferenced Image')
+st.write("### Inferenced Image")
 
 # # Convert to JPEG Buffer.
 # buffered = io.BytesIO()
@@ -91,8 +84,7 @@ st.write('### Inferenced Image')
 # image.save(buffered, quality=90, format='JPEG')
 
 # Display image.
-st.image(image,
-         use_column_width=True)
+st.image(image, use_column_width=True)
 
 # ## Construct the URL to retrieve JSON.
 # upload_url = ''.join([

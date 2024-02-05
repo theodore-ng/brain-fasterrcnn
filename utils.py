@@ -88,8 +88,8 @@ def pick_image_example(dir):
             except:
                 continue
         break
-    image = F.pil_to_tensor(image)  # convert to tensor shape (3,640,640)
-    image_tensor = F.convert_image_dtype(image)    # covert to type for the model
+    image = F.pil_to_tensor(image)                  # convert to tensor shape (3,640,640)
+    image_tensor = F.convert_image_dtype(image)     # covert to type for the model
     
     return image, image_tensor, img_file
 
