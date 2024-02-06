@@ -1,3 +1,5 @@
+import io
+
 from test import predict_image
 from config import CONFIDENT_SCORE, NUM_CLASSES, MODEL_PATH
 from model import get_model_instance_segmentation
@@ -28,6 +30,10 @@ async def predict_upload_file(file: UploadFile):
     model.eval()
     
     # Convert data
+    # contents = file.file.read()
+    # print(type(contents))
+    # image = Image.open(io.BytesIO(file))
+    
     image = Image.open(file.file)
     
     image = F.pil_to_tensor(image)                  # convert to tensor shape (3,640,640)

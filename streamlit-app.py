@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import io
 
 from PIL import Image
 
@@ -54,8 +55,13 @@ with result_col:
 
     else:
         # User-selected image.
-        resp = requests.post(url, files={"file": uploaded_file})
-        st.write(resp.status_code)
+        image = Image.open(uploaded_file)
+        # buffered = io.BytesIO()
+        # image.save(buffered, quality=90, format="JPEG")
+        image.save("image.jpg", "JPEG")
+        with open("image.jpg", "rb") as f:
+            resp = requests.post(url, files={"file":f})
+        st.write(resp.json())
 
     # Display image.
     st.image(image, use_column_width=True)
