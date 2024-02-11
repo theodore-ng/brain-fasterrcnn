@@ -1,14 +1,10 @@
-import io
-
-from test import predict_image
+from model_test import predict_image
 from config import CONFIDENT_SCORE, NUM_CLASSES, MODEL_PATH
 from model import get_model_instance_segmentation
 from PIL import Image
-from typing import Annotated
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, UploadFile
 import torch
 import torchvision.transforms.functional as F
-import uvicorn
  
 # Creating FastAPI instance
 app = FastAPI()
